@@ -1,0 +1,30 @@
+<?php
+$arr18 = [
+    'a' => 1,
+    'b' => 2,
+    'c' => 3
+    ];
+    $keys = array_keys($arr18);
+    $values = array_values($arr18); 
+    echo var_dump($keys);
+    echo var_dump($values);
+    
+$arr19 = array_combine($keys, $values);
+echo var_dump($arr19);
+
+$arr20 = array_flip($arr18);
+echo var_dump($arr20);
+$arr21 = [1, 2, 3, 4, 5];
+echo var_dump(array_reverse($arr21));
+
+$arr22 = ['a', '-', 'b', '-', 'c', '-', 'd'];
+$num = array_search('-', $arr22);
+echo var_dump($num);
+array_splice($arr22, $num, 1);
+echo var_dump($arr22);
+
+$arr24 = ['a', 'b', 'c', 'd', 'e'];
+$arrVal1 = [0 => '!'];
+$arrVal2 = [3 => '!!'];
+
+echo var_dump(array_replace($arr24, $arrVal1, $arrVal2));
