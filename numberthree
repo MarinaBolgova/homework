@@ -69,4 +69,49 @@ function isEvenArr($arr)
  
  //==================
  
+ function getDivisors ($x)
+{
+	$arrDivisors = [];
+	if (is_int($x))
+	{
+		for ($i = 1; $i <= abs($x); $i++)
+		{
+			if (($x % $i) == 0)
+			{
+				$arrDivisors[] = $i;
+			} 
+		} 
+	} else echo 'Ошибка';
+	
+	return $arrDivisors;
+}
+
+ var_dump(getDivisors(15));
+ var_dump(getDivisors(-20));
+ var_dump(getDivisors(1.5));
+ var_dump(getDivisors('123'));
+ 
+ //================
+ 
+ function getCommonDivisors($a, $b)
+{
+	$arrA = [];
+	$arrB = [];
+	$arrC = [];
+	
+	if (is_int($a) && is_int($b))
+	{
+		$arrA = getDivisors($a);
+		$arrB = getDivisors($b);
+		$arrC = array_intersect($arrA, $arrB);
+	} else echo 'ERROR';
+	
+	return $arrC	;
+} 
+ var_dump(getCommonDivisors(10, 18));
+ var_dump(getCommonDivisors(12, 24));
+ var_dump(getCommonDivisors(18, 10));
+ var_dump(getCommonDivisors(24, 12));
+ 
+ 
  
