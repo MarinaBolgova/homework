@@ -27,6 +27,9 @@ function selectYear($a, $b = 0)
     } else return 'Ошибка';
     return $arr;
 }
+
+//===========
+
 function isEven($p) 
  {
      if (is_int($p))
@@ -44,4 +47,26 @@ function isEven($p)
  echo var_dump(isEven(11.2));
  echo var_dump(isEven('12335'));
  echo var_dump(isEven(-10));
+ 
+ //=============
+ 
+ $arrNum = [1, 2, -3, -4, 5, 6, 7, 8, 9, -10, 11, 12, 13, -14, 15];
+
+function isEvenArr($arr) 
+ { 
+ 	$newArr = [];
+ 	foreach ($arr as $key => $value)
+	{ 
+		if (isEven($value)) 
+			{
+  				$newArr[] += $value;
+  			} 
+	}  		
+  	return $newArr; 
+ } 
+ 
+ var_dump(isEvenArr($arrNum));
+ 
+ //==================
+ 
  
